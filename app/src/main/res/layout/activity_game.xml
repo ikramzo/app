@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!-- Score Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/scoreText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Score: 0"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/timerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⏱ 30"
+            android:textColor="@color/accent_light"
+            android:textSize="22sp"
+            android:fontFamily="sans-serif-bold" />
+    </LinearLayout>
+
+    <!-- Progress bar for timer -->
+    <ProgressBar
+        android:id="@+id/timerBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:max="300"
+        android:progress="300"
+        android:progressDrawable="@drawable/timer_progress" />
+
+    <!-- Game area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/colorWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="RED"
+            android:textSize="56sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="40dp"
+            android:text="Does the word match its color?"
+            android:textColor="#667"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/noButton"
+                android:layout_width="140dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="#FF555555"
+                android:text="NO ✗"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="16dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/yesButton"
+                android:layout_width="140dp"
+                android:layout_height="64dp"
+                android:backgroundTint="#FF4CAF50"
+                android:text="YES ✓"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:cornerRadius="16dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/feedbackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textSize="18sp"
+            android:textColor="@color/gold" />
+    </LinearLayout>
+
+    <!-- Banner ad at bottom -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_id" />
+
+</LinearLayout>
